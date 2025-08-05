@@ -3,34 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub Pages Site</title>
+    <title>Shubham - Embedded Systems Developer</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
             text-align: center;
-            padding-top: 50px;
+            margin-bottom: 40px;
+            padding: 40px 0;
         }
-        h1 {
-            color: #333;
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: #00d4ff;
+            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
         }
-        p {
-            color: #666;
-            font-size: 1.2em;
+
+        .header .subtitle {
+            font-size: 1.3rem;
+            color: #b8d4f0;
+            font-weight: 300;
+        }
+
+        .skills-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .skills-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #00d4ff;
+        }
+
+        .progression-track {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border-left: 4px solid #00d4ff;
+        }
+
+        .track-title {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #00d4ff;
+            display: flex;
+            align-items: center;
+        }
+
+        .track-title::before {
+            content: "▶";
+            margin-right: 8px;
+            font-size: 0.8rem;
+        }
+
+        .progression-line {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tech-item {
+            background: linear-gradient(45deg, #00d4ff, #0099cc);
+            color: #ffffff;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .arrow {
+            color: #00d4ff;
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .hardware .tech-item {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .hardware .tech-item:hover {
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.5);
+        }
+
+        .languages .tech-item {
+            background: linear-gradient(45deg, #4ecdc4, #44a08d);
+            box-shadow: 0 4px 15px rgba(78, 205, 196, 0.3);
+        }
+
+        .languages .tech-item:hover {
+            box-shadow: 0 6px 20px rgba(78, 205, 196, 0.5);
+        }
+
+        .frameworks .tech-item {
+            background: linear-gradient(45deg, #a8e6cf, #7fcdcd);
+            box-shadow: 0 4px 15px rgba(168, 230, 207, 0.3);
+        }
+
+        .frameworks .tech-item:hover {
+            box-shadow: 0 6px 20px rgba(168, 230, 207, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .progression-line {
+                justify-content: center;
+            }
+            
+            .tech-item {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+            
+            .skills-section {
+                padding: 20px;
+            }
+        }
+
+        .contact-info {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .contact-info a {
+            color: #00d4ff;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.7);
         }
     </style>
 </head>
 <body>
+    <div class="container">
+        <div class="header">
+            <h1>Shubham</h1>
+            <p class="subtitle">Embedded Systems Developer | Hardware-Software Integration Specialist</p>
+        </div>
 
-    <h1>Hello, GitHub Pages!</h1>
-    <p>This is my first test page. It's working!</p>
+        <div class="skills-section">
+            <h2 class="skills-title">Technical Expertise Progression</h2>
+            
+            <div class="progression-track hardware">
+                <div class="track-title">🔧 Hardware Platforms</div>
+                <div class="progression-line">
+                    <span class="tech-item">8051</span>
+                    <span class="arrow">→</span>
+                    <span class="tech-item">Cortex-M</span>
+                    <span class="arrow">→</span>
+                    <span class="tech-item">Cortex-R52</span>
+                    <span class="arrow">→</span>
+                    <span class="tech-item">Cortex-A78</span>
+                </div>
+            </div>
+
+            <div class="progression-track languages">
+                <div class="track-title">💻 Programming Languages</div>
+                <div class="progression-line">
+                    <span class="tech-item">Assembly</span>
+                    <span class="arrow">→</span>
+                    <span class="tech-item">C</span>
+                    <span class="arrow">→</span>
+                    <span class="tech-item">C++</span>
+                    <span class="arrow">→</span>
+                    <span class="tech-item">TLA+</span>
+                    <span class="arrow">→</span>
+                    <span class="tech-item">Python</span>
+                    <span class="arrow">→</span>
+                    <span class="tech-item">Rust</span>
+                </div>
+            </div>
+
+            <div class="progression-track frameworks">
+                <div class="track-title">⚡ Operating Systems & Frameworks</div>
+                <div class="progression-line">
+                    <span class="tech-item">Baremetal</span>
+                    <span class="arrow">→</span>
+                    <span class="tech-item">FreeRTOS</span>
+                    <span class="arrow">→</span>
+                    <span class="tech-item">SafeRTOS</span>
+                    <span class="arrow">→</span>
+                    <span class="tech-item">Hypervisor Type 1</span>
+                    <span class="arrow">→</span>
+                    <span class="tech-item">Linux</span>
+                    <span class="arrow">→</span>
+                    <span class="tech-item">QNX</span>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <a href="https://github.com/skd-byte" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/your-profile" target="_blank">LinkedIn</a>
+                <a href="mailto:your.email@example.com">Email</a>
+            </div>
+        </div>
+    </div>
 
     <script>
-        // A simple JavaScript function to show an alert
-        window.onload = function() {
-            alert("The page has loaded successfully!");
-        };
-    </script>
+        // Add smooth hover animations
+        document.querySelectorAll('.tech-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-3px) scale(1.05)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
 
+        // Add loading animation
+        window.addEventListener('load', function() {
+            const items = document.querySelectorAll('.tech-item');
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    item.style.transition = 'all 0.6s ease';
+                    
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 50);
+                }, index * 100);
+            });
+        });
+    </script>
 </body>
 </html>
